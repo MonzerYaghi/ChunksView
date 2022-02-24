@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ChunksView -->
+    <declare-styleable name="ChunksView">
+        <attr name="chunksNumber" format="integer" />
+        <attr name="chunkLength" format="integer" />
+        <attr name="chunkSeparator">
+            <flag name="SPACE" value="0" />
+            <flag name="DASH" value="1" />
+            <flag name="SLASH" value="2" />
+            <flag name="DOT" value="3" />
+        </attr>
+    </declare-styleable>
+
+</resources>
