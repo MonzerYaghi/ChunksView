@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         app:chunkLength="4"
+        android:maxLength="18"
         app:chunkSeparator="DASH"
-        app:chunksNumber="4"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

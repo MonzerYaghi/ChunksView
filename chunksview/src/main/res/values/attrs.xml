@@ -3,7 +3,6 @@
 
     <!-- ChunksView -->
     <declare-styleable name="ChunksView">
-        <attr name="chunksNumber" format="integer" />
         <attr name="chunkLength" format="integer" />
         <attr name="chunkSeparator">
             <flag name="SPACE" value="0" />

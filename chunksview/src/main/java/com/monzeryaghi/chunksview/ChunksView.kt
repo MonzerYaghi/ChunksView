@@ -20,7 +20,6 @@ class ChunksView : AppCompatEditText {
     private val SEPARATOR_DOT = "."
 
     //Default values
-    private val DEFAULT_CHUNKS_NUMBER = 4
     private val DEFAULT_CHUNK_LENGTH = 4
     private val DEFAULT_SEPARATOR_INDEX = 0
 
@@ -53,26 +52,17 @@ class ChunksView : AppCompatEditText {
             )
             if (chunkLength == 0) chunkLength = DEFAULT_CHUNK_LENGTH
 
-
-            var chunksNumber = typedArray.getInt(
-                R.styleable.ChunksView_chunksNumber,
-                DEFAULT_CHUNKS_NUMBER
-            )
-            if (chunksNumber == 0) chunksNumber = DEFAULT_CHUNKS_NUMBER
-
-            drawView(chunkLength, chunksNumber, chunksSeparator)
+            drawView(chunkLength, chunksSeparator)
 
             typedArray.recycle()
         }
     }
 
-    private fun drawView(chunkLength: Int, chunksNumber: Int, chunksSeparatorIndex: Int) {
+    private fun drawView(chunkLength: Int,
+                         chunksSeparatorIndex: Int) {
 
         //Getting the separator
         val separator = getSeparator(chunksSeparatorIndex)
-
-        //Setting editText max length
-        setMaxLength(getMaxLength(chunkLength, chunksNumber))
 
         addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -99,12 +89,8 @@ class ChunksView : AppCompatEditText {
         })
     }
 
-    //Getting the max length to be provided to the edittext
-    private fun getMaxLength(chunkLength: Int, chunksNumber: Int): Int {
-        return chunkLength * chunksNumber + (chunksNumber - 1)
-    }
-
-    private fun formatInput(chunkLength: Int, separator: String) {
+    private fun formatInput(chunkLength: Int,
+                            separator: String) {
         if (currentInput.length > chunkLength) {
             var startIndex = 0
             var endIndex = chunkLength
