@@ -49,7 +49,7 @@ In your xml file, add the following
 
 ```
 
-This view has 3 attributes:
+This view has 2 attributes:
 
 - chunksNumber: The total number of chunks (for example for the bank card pan 1111-2222-3333-4444, the number of chunks is 4)
 - chunkSeparator: The charactor that will separator the chunks, in the view the separators are predefined as follows (SPACE,DASH,SLASH,DOT)
